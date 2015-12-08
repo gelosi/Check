@@ -31,7 +31,7 @@
     
     [self.window makeKeyAndVisible];
     
-    [self loadChecklist];
+    [self loadChecklistAsync];
 
     return YES;
 }
@@ -43,7 +43,7 @@
     }];
 }
 
-- (void)loadChecklist
+- (void)loadChecklistAsync
 {
     [[ChecklistFileStorage storage] loadCheckList:@"Checklist" comletion:^(CheckList *checklist, BOOL result) {
         if (!result) {
