@@ -56,11 +56,11 @@ static NSString* const TaskListKey = @"TaskList";
     return self.taskList[index];
 }
 
-- (void)addTask:(id<Task>)task
+- (void)addTask:(id<Task>)task atIndex:(NSUInteger)index
 {
     NSParameterAssert(task);
 
-    [self.taskList insertObject:task atIndex:0];
+    [self.taskList insertObject:task atIndex:index];
 }
 
 - (void)removeTaskAtIndex:(NSUInteger)index

@@ -18,7 +18,7 @@ typedef void(^ChecklistStorageCompletion)(CheckList *checklist, BOOL result);
 @end
 
 
-@interface ChecklistFileStorage : NSObject<ChecklistStorage>
+@interface ChecklistAsyncFileStorage : NSObject<ChecklistStorage>
 
 +(instancetype) storage;
 

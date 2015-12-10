@@ -10,9 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-static NSUInteger const ActiveTasksSectionIndex = 0;
-static NSUInteger const CompleteTasksSectionIndex = 1;
-
+NS_ENUM(NSUInteger, TaskSection) {
+    TaskSectionActive = 0,
+    TaskSectionComplete
+};
 
 
 @implementation ChecklistDataSource
@@ -51,6 +52,57 @@ static NSUInteger const CompleteTasksSectionIndex = 1;
     return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self deleteTaskAtIndexPath:indexPath];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    id sourceTask = [[self taskListForSection:sourceIndexPath.section] taskAtIndex:sourceIndexPath.row];
+    [self deleteTaskAtIndexPath:sourceIndexPath];
+    [self addTask:sourceTask atIndexPath:destinationIndexPath];
+    
+    [tableView reloadRowsAtIndexPaths:@[sourceIndexPath, destinationIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+
+#pragma mark - Source Methods
+
+-(void)addTask:(id<Task>)newTask atIndexPath:(NSIndexPath *)indexPath
+{
+    TaskList *taskList = [self taskListForSection:indexPath.section];
+    
+    [taskList addTask:newTask atIndex:indexPath.row];
+}
+
+-(void)updateTask:(id<Task>)newTask atIndexPath:(NSIndexPath *)indexPath
+{
+    TaskList *taskList = [self taskListForSection:indexPath.section];
+    
+    [taskList removeTaskAtIndex:indexPath.row];
+    [taskList addTask:newTask atIndex:indexPath.row];
+}
+
+-(void)deleteTaskAtIndexPath:(NSIndexPath *)indexPath
+{
+    TaskList *taskList = [self taskListForSection:indexPath.section];
+    
+    [taskList removeTaskAtIndex:indexPath.row];
+}
 
 
 #pragma mark - helper methods
@@ -71,12 +123,12 @@ static NSUInteger const CompleteTasksSectionIndex = 1;
     cell.accessoryType = task.complete ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
 }
 
--(TaskList *)taskListForSection:(NSInteger)section
+-(nullable TaskList *)taskListForSection:(NSInteger)section
 {
     switch (section) {
-        case ActiveTasksSectionIndex:
+        case TaskSectionActive:
             return self.checkList.activeTasks;
-        case CompleteTasksSectionIndex:
+        case TaskSectionComplete:
             return self.checkList.completeTasks;
         default:
             return nil;

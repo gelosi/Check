@@ -17,4 +17,8 @@
 
 -(instancetype)initWithCheckList:(CheckList *)checkList;
 
+-(void)addTask:(id<Task>)newTask atIndexPath:(NSIndexPath *)indexPath;
+-(void)updateTask:(id<Task>)newTask atIndexPath:(NSIndexPath *)indexPath;
+-(void)deleteTaskAtIndexPath:(NSIndexPath *)indexPath;
+
 @end

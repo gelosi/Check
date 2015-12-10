@@ -10,6 +10,8 @@
 #import "ChecklistViewController.h"
 #import "ChecklistStorage.h"
 
+static NSString * const ChecklistName = @"Cheklist";
+
 @interface AppDelegate ()
 @property (nonatomic) ChecklistViewController *viewController;
 @end
@@ -21,7 +23,7 @@
     
     self.viewController = [ChecklistViewController viewController];
     
-    self.viewController.dataSource = [[ChecklistDataSource alloc] initWithCheckList:[[CheckList alloc] initWithTitle:@"Checklist" activeTasks:[[TaskList alloc] initWithTasks:@[]] completeTasks:[[TaskList alloc] initWithTasks:@[]]] ];
+    self.viewController.dataSource = [self emptyChecklistDataSource];
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
     
@@ -38,14 +40,14 @@
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    [[ChecklistFileStorage storage] storeChecklist:self.viewController.dataSource.checkList comletion:^(CheckList *checklist, BOOL result) {
+    [[ChecklistAsyncFileStorage storage] storeChecklist:self.viewController.dataSource.checkList comletion:^(CheckList *checklist, BOOL result) {
         NSLog(@"App Data %@", result ? @"Successfully Stored" : @"Failed To Store");
     }];
 }
 
 - (void)loadChecklistAsync
 {
-    [[ChecklistFileStorage storage] loadCheckList:@"Checklist" comletion:^(CheckList *checklist, BOOL result) {
+    [[ChecklistAsyncFileStorage storage] loadCheckList:ChecklistName comletion:^(CheckList *checklist, BOOL result) {
         if (!result) {
             NSLog(@"%s: Loading Checklist failed",__PRETTY_FUNCTION__);
             return;
@@ -53,6 +55,15 @@
         
         self.viewController.dataSource = [[ChecklistDataSource alloc] initWithCheckList:checklist];
     }];
+}
+
+- (ChecklistDataSource *) emptyChecklistDataSource
+{
+    CheckList *checklist = [[CheckList alloc] initWithTitle:ChecklistName
+                                                activeTasks:[[TaskList alloc] initWithTasks:@[]]
+                                              completeTasks:[[TaskList alloc] initWithTasks:@[]]];
+    
+    return [[ChecklistDataSource alloc] initWithCheckList:checklist];
 }
 
 

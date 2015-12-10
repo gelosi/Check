@@ -24,6 +24,8 @@ static NSString* const ItemCell = @"cell";
     
     viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:viewController action:@selector(addTask:)];
     
+    viewController.navigationItem.leftBarButtonItem = [viewController editButtonItem];
+    
     return viewController;
 }
 
@@ -39,11 +41,24 @@ static NSString* const ItemCell = @"cell";
 
 - (void)addTask:(id)sender
 {
-    TaskItem *Task = [[TaskItem alloc] initWithTitle:@"Item" complete:NO];
+    TaskItem *Task = [[TaskItem alloc] initWithTitle:[self randomItemTitle] complete:NO];
     
-    [self.dataSource.checkList.activeTasks addTask:Task];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     
-    [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForItem:0 inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.dataSource addTask:Task atIndexPath:indexPath];
+    
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+-(NSString *)randomItemTitle
+{
+    NSArray *itemPart = @[@"Item", @"Task", @"Point", @"Punkt", @"Reminder", @"Pink", @"Check"];
+    NSArray *explainPart = @[@"One", @"Two", @"Call Someone", @"Floyd", @"Break", @"Off", @"On"];
+    
+    NSUInteger indexPart =  arc4random_uniform((u_int32_t)itemPart.count);
+    NSUInteger indexExplain =  arc4random_uniform((u_int32_t)explainPart.count);
+    
+    return [@[itemPart[indexPart],explainPart[indexExplain]] componentsJoinedByString:@" "];
 }
 
 @end

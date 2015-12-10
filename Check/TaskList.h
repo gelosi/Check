@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(NSUInteger)taskCount;
 
 - (id<Task>)taskAtIndex:(NSUInteger)index;
-- (void)addTask:(id<Task>)task;
+- (void)addTask:(id<Task>)task atIndex:(NSUInteger)index;
 - (void)removeTaskAtIndex:(NSUInteger)index;
 - (void)moveTaskAtIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex;
 

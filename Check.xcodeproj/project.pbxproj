@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C04F3881C1A3E63007E6A3E /* TaskListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C04F3871C1A3E63007E6A3E /* TaskListTests.m */; };
+		7CA958501C1A3CD30045D088 /* TaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA9584F1C1A3CD30045D088 /* TaskTests.m */; };
 		7CF88C6C1C148D3E00B81DDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF88C6B1C148D3E00B81DDE /* main.m */; };
 		7CF88C6F1C148D3E00B81DDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF88C6E1C148D3E00B81DDE /* AppDelegate.m */; };
 		7CF88C721C148D3E00B81DDE /* ChecklistViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF88C711C148D3E00B81DDE /* ChecklistViewController.m */; };
 		7CF88C771C148D3F00B81DDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CF88C761C148D3F00B81DDE /* Assets.xcassets */; };
 		7CF88C7A1C148D3F00B81DDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF88C781C148D3F00B81DDE /* LaunchScreen.storyboard */; };
-		7CF88C851C148D3F00B81DDE /* CheckTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF88C841C148D3F00B81DDE /* CheckTests.m */; };
 		7CF88C911C1492B500B81DDE /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF88C901C1492B500B81DDE /* Task.m */; };
 		7CF88C921C1492B500B81DDE /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF88C901C1492B500B81DDE /* Task.m */; };
 		7CF88C951C149CF400B81DDE /* ItemPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF88C941C149CF400B81DDE /* ItemPresenter.m */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C04F3871C1A3E63007E6A3E /* TaskListTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListTests.m; sourceTree = "<group>"; };
+		7CA9584F1C1A3CD30045D088 /* TaskTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskTests.m; sourceTree = "<group>"; };
 		7CF88C671C148D3E00B81DDE /* Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Check.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF88C6B1C148D3E00B81DDE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7CF88C6D1C148D3E00B81DDE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -48,7 +51,6 @@
 		7CF88C791C148D3F00B81DDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CF88C7B1C148D3F00B81DDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CF88C801C148D3F00B81DDE /* CheckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CheckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7CF88C841C148D3F00B81DDE /* CheckTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckTests.m; sourceTree = "<group>"; };
 		7CF88C861C148D3F00B81DDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CF88C8F1C1492B500B81DDE /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		7CF88C901C1492B500B81DDE /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
@@ -138,7 +140,8 @@
 		7CF88C831C148D3F00B81DDE /* CheckTests */ = {
 			isa = PBXGroup;
 			children = (
-				7CF88C841C148D3F00B81DDE /* CheckTests.m */,
+				7CA9584F1C1A3CD30045D088 /* TaskTests.m */,
+				7C04F3871C1A3E63007E6A3E /* TaskListTests.m */,
 				7CF88C861C148D3F00B81DDE /* Info.plist */,
 			);
 			path = CheckTests;
@@ -262,8 +265,9 @@
 			files = (
 				7CF88C9A1C16218000B81DDE /* TaskList.m in Sources */,
 				7CF88C921C1492B500B81DDE /* Task.m in Sources */,
-				7CF88C851C148D3F00B81DDE /* CheckTests.m in Sources */,
 				7CF88CA61C16405D00B81DDE /* ChecklistStorage.m in Sources */,
+				7CA958501C1A3CD30045D088 /* TaskTests.m in Sources */,
+				7C04F3881C1A3E63007E6A3E /* TaskListTests.m in Sources */,
 				7CF88CA21C16353500B81DDE /* ChecklistDataSource.m in Sources */,
 				7CF88C961C149CF400B81DDE /* ItemPresenter.m in Sources */,
 				7CF88C9E1C162CE000B81DDE /* CheckList.m in Sources */,
@@ -443,6 +447,7 @@
 				7CF88C8B1C148D3F00B81DDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7CF88C8C1C148D3F00B81DDE /* Build configuration list for PBXNativeTarget "CheckTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +456,7 @@
 				7CF88C8E1C148D3F00B81DDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

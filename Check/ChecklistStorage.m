@@ -9,11 +9,11 @@
 #import "ChecklistStorage.h"
 
 
-@implementation ChecklistFileStorage
+@implementation ChecklistAsyncFileStorage
 
 + (instancetype)storage
 {
-    return [ChecklistFileStorage new];
+    return [ChecklistAsyncFileStorage new];
 }
 
 - (NSString *)pathForFile:(NSString *)file
