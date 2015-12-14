@@ -39,11 +39,25 @@ static NSString* const ItemCell = @"cell";
     [self.tableView reloadData];
 }
 
+#pragma mark - control table view
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSIndexPath *newIndexPath = [self.dataSource indexPathByUpdatingTaskCompletionStatusAtIndexPath:indexPath];
+
+    [tableView moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];
+
+    [tableView reloadRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+
 - (void)addTask:(id)sender
 {
     TaskItem *Task = [[TaskItem alloc] initWithTitle:[self randomItemTitle] complete:NO];
     
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    NSIndexPath *indexPath = [self.dataSource indexPathForNewActiveTask];
     
     [self.dataSource addTask:Task atIndexPath:indexPath];
     
@@ -53,7 +67,7 @@ static NSString* const ItemCell = @"cell";
 -(NSString *)randomItemTitle
 {
     NSArray *itemPart = @[@"Item", @"Task", @"Point", @"Punkt", @"Reminder", @"Pink", @"Check"];
-    NSArray *explainPart = @[@"One", @"Two", @"Call Someone", @"Floyd", @"Break", @"Off", @"On"];
+    NSArray *explainPart = @[@"One", @"Two", @"Call Someone", @"Floyd", @"Break", @"Off", @"On", @"Pizza"];
     
     NSUInteger indexPart =  arc4random_uniform((u_int32_t)itemPart.count);
     NSUInteger indexExplain =  arc4random_uniform((u_int32_t)explainPart.count);

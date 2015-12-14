@@ -8,8 +8,23 @@
 
 #import "ChecklistStorage.h"
 
+@interface ChecklistAsyncFileStorage()
+@property (nonatomic) NSOperationQueue *fileOperations;
+@end
 
 @implementation ChecklistAsyncFileStorage
+
+-(instancetype)init
+{
+    self = [super init];
+
+    if (self) {
+        _fileOperations = [NSOperationQueue new];
+        _fileOperations.maxConcurrentOperationCount = 1;
+    }
+
+    return self;
+}
 
 + (instancetype)storage
 {
@@ -28,32 +43,33 @@
 
 -(void)loadCheckList:(NSString *)name comletion:(ChecklistStorageCompletion)completion
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
+    [self.fileOperations addOperationWithBlock:^{
+
         NSString *fileName = [self pathForFile:name];
-        
+
         CheckList* checkList = [NSKeyedUnarchiver unarchiveObjectWithFile:fileName];
-        
+
         BOOL success = checkList != nil;
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
+
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             completion(checkList, success);
-        });
-    });
+        }];
+    }];
+
 }
 
 - (void)storeChecklist:(CheckList *)checkList comletion:(ChecklistStorageCompletion)completion
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    [self.fileOperations addOperationWithBlock:^{
         
         NSString *fileName = [self pathForFile:checkList.title];
         
         BOOL success = [NSKeyedArchiver archiveRootObject:checkList toFile:fileName];
         
-        dispatch_async(dispatch_get_main_queue(), ^{
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             completion(checkList, success);
-        });
-    });
+        }];
+    }];
 }
 
 @end

@@ -17,8 +17,13 @@
 
 -(instancetype)initWithCheckList:(CheckList *)checkList;
 
+-(NSIndexPath *)indexPathForNewActiveTask;
+-(NSIndexPath *)indexPathForNewCompleteTask;
+
+-(id<Task>)taskAtIndexPath:(NSIndexPath *)indexPath;
+
 -(void)addTask:(id<Task>)newTask atIndexPath:(NSIndexPath *)indexPath;
--(void)updateTask:(id<Task>)newTask atIndexPath:(NSIndexPath *)indexPath;
 -(void)deleteTaskAtIndexPath:(NSIndexPath *)indexPath;
+-(NSIndexPath *)indexPathByUpdatingTaskCompletionStatusAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

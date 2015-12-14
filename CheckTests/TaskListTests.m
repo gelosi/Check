@@ -7,8 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-
-#import "TaskList.h"
+#import "TestsHelper.h"
 
 @interface TaskListTests : XCTestCase
 
@@ -16,25 +15,10 @@
 
 @implementation TaskListTests
 
-- (NSArray *)threeTasksArray
-{
-    return @[
-             [[TaskItem alloc] initWithTitle:@"item 1" complete:NO],
-             [[TaskItem alloc] initWithTitle:@"item 2" complete:NO],
-             [[TaskItem alloc] initWithTitle:@"item 3" complete:NO]
-             ];
-}
-
-- (TaskList *)taskListWithThreeTasks
-{
-    NSArray *testArray = [self threeTasksArray];
-    
-    return [[TaskList alloc] initWithTasks:testArray];
-}
 
 - (void)testTaskListCreate
 {
-    NSArray *testArray = [self threeTasksArray];
+    NSArray *testArray = [TestsHelper threeTasksArray:YES];
     
     TaskList *list = [[TaskList alloc] initWithTasks:testArray];
     
@@ -43,7 +27,7 @@
 
 -(void)testTaskAddFirst
 {
-    TaskList *list = [self taskListWithThreeTasks];
+    TaskList *list = [TestsHelper taskListWithThreeCompleteTasks];
     
     TaskItem *newTask = [[TaskItem alloc] initWithTitle:@"task 4" complete:NO];
     
@@ -58,7 +42,7 @@
 
 -(void)testTaskAddLast
 {
-    TaskList *list = [self taskListWithThreeTasks];
+    TaskList *list = [TestsHelper taskListWithThreeCompleteTasks];
     
     id<Task> newTask = [[TaskItem alloc] initWithTitle:@"task 4" complete:NO];
     
@@ -73,7 +57,7 @@
 
 -(void)testTaskDelete
 {
-    TaskList *list = [self taskListWithThreeTasks];
+    TaskList *list = [TestsHelper taskListWithThreeCompleteTasks];
     
     id<Task> item = [list taskAtIndex:0];
     
@@ -86,7 +70,7 @@
 
 -(void)testMoveTask
 {
-    TaskList *list = [self taskListWithThreeTasks];
+    TaskList *list = [TestsHelper taskListWithThreeCompleteTasks];
     
     id<Task> taskOne = [list taskAtIndex:0];
     id<Task> taskThree = [list taskAtIndex:2];
