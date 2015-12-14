@@ -11,6 +11,7 @@
 		7C789FEB1C1F0BCB00C5BE8B /* CheckListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C789FEA1C1F0BCB00C5BE8B /* CheckListTests.m */; };
 		7C789FEE1C1F0E4400C5BE8B /* TestsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C789FED1C1F0E4400C5BE8B /* TestsHelper.m */; };
 		7C789FF01C1F0F7E00C5BE8B /* ChecklistDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C789FEF1C1F0F7E00C5BE8B /* ChecklistDataSourceTests.m */; };
+		7C789FF51C1F259700C5BE8B /* CreateTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C789FF41C1F259700C5BE8B /* CreateTaskController.m */; };
 		7CA958501C1A3CD30045D088 /* TaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA9584F1C1A3CD30045D088 /* TaskTests.m */; };
 		7CF88C6C1C148D3E00B81DDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF88C6B1C148D3E00B81DDE /* main.m */; };
 		7CF88C6F1C148D3E00B81DDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF88C6E1C148D3E00B81DDE /* AppDelegate.m */; };
@@ -19,8 +20,6 @@
 		7CF88C7A1C148D3F00B81DDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF88C781C148D3F00B81DDE /* LaunchScreen.storyboard */; };
 		7CF88C911C1492B500B81DDE /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF88C901C1492B500B81DDE /* Task.m */; };
 		7CF88C921C1492B500B81DDE /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF88C901C1492B500B81DDE /* Task.m */; };
-		7CF88C951C149CF400B81DDE /* ItemPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF88C941C149CF400B81DDE /* ItemPresenter.m */; };
-		7CF88C961C149CF400B81DDE /* ItemPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF88C941C149CF400B81DDE /* ItemPresenter.m */; };
 		7CF88C991C16218000B81DDE /* TaskList.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF88C981C16218000B81DDE /* TaskList.m */; };
 		7CF88C9A1C16218000B81DDE /* TaskList.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF88C981C16218000B81DDE /* TaskList.m */; };
 		7CF88C9D1C162CE000B81DDE /* CheckList.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF88C9C1C162CE000B81DDE /* CheckList.m */; };
@@ -47,6 +46,8 @@
 		7C789FEC1C1F0E4400C5BE8B /* TestsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestsHelper.h; sourceTree = "<group>"; };
 		7C789FED1C1F0E4400C5BE8B /* TestsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestsHelper.m; sourceTree = "<group>"; };
 		7C789FEF1C1F0F7E00C5BE8B /* ChecklistDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChecklistDataSourceTests.m; sourceTree = "<group>"; };
+		7C789FF31C1F259700C5BE8B /* CreateTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateTaskController.h; path = ../CreateTaskController.h; sourceTree = "<group>"; };
+		7C789FF41C1F259700C5BE8B /* CreateTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateTaskController.m; path = ../CreateTaskController.m; sourceTree = "<group>"; };
 		7CA9584F1C1A3CD30045D088 /* TaskTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskTests.m; sourceTree = "<group>"; };
 		7CF88C671C148D3E00B81DDE /* Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Check.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF88C6B1C148D3E00B81DDE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -61,8 +62,6 @@
 		7CF88C861C148D3F00B81DDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CF88C8F1C1492B500B81DDE /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
 		7CF88C901C1492B500B81DDE /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
-		7CF88C931C149CF400B81DDE /* ItemPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemPresenter.h; sourceTree = "<group>"; };
-		7CF88C941C149CF400B81DDE /* ItemPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemPresenter.m; sourceTree = "<group>"; };
 		7CF88C971C16218000B81DDE /* TaskList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskList.h; sourceTree = "<group>"; };
 		7CF88C981C16218000B81DDE /* TaskList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskList.m; sourceTree = "<group>"; };
 		7CF88C9B1C162CE000B81DDE /* CheckList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckList.h; sourceTree = "<group>"; };
@@ -118,8 +117,8 @@
 				7CF88CA41C16405D00B81DDE /* ChecklistStorage.m */,
 				7CF88C701C148D3E00B81DDE /* ChecklistViewController.h */,
 				7CF88C711C148D3E00B81DDE /* ChecklistViewController.m */,
-				7CF88C931C149CF400B81DDE /* ItemPresenter.h */,
-				7CF88C941C149CF400B81DDE /* ItemPresenter.m */,
+				7C789FF31C1F259700C5BE8B /* CreateTaskController.h */,
+				7C789FF41C1F259700C5BE8B /* CreateTaskController.m */,
 				7CF88C761C148D3F00B81DDE /* Assets.xcassets */,
 				7CF88C781C148D3F00B81DDE /* LaunchScreen.storyboard */,
 				7CF88C7B1C148D3F00B81DDE /* Info.plist */,
@@ -259,7 +258,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CF88C911C1492B500B81DDE /* Task.m in Sources */,
-				7CF88C951C149CF400B81DDE /* ItemPresenter.m in Sources */,
 				7CF88C9D1C162CE000B81DDE /* CheckList.m in Sources */,
 				7CF88CA51C16405D00B81DDE /* ChecklistStorage.m in Sources */,
 				7CF88C721C148D3E00B81DDE /* ChecklistViewController.m in Sources */,
@@ -267,6 +265,7 @@
 				7CF88CA11C16353500B81DDE /* ChecklistDataSource.m in Sources */,
 				7CF88C991C16218000B81DDE /* TaskList.m in Sources */,
 				7CF88C6C1C148D3E00B81DDE /* main.m in Sources */,
+				7C789FF51C1F259700C5BE8B /* CreateTaskController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +280,6 @@
 				7C789FF01C1F0F7E00C5BE8B /* ChecklistDataSourceTests.m in Sources */,
 				7C04F3881C1A3E63007E6A3E /* TaskListTests.m in Sources */,
 				7CF88CA21C16353500B81DDE /* ChecklistDataSource.m in Sources */,
-				7CF88C961C149CF400B81DDE /* ItemPresenter.m in Sources */,
 				7C789FEB1C1F0BCB00C5BE8B /* CheckListTests.m in Sources */,
 				7CF88C9E1C162CE000B81DDE /* CheckList.m in Sources */,
 				7C789FEE1C1F0E4400C5BE8B /* TestsHelper.m in Sources */,

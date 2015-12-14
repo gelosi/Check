@@ -7,14 +7,16 @@
 //
 
 #import "ChecklistDataSource.h"
+#import "CreateTaskController.h"
 
 @import UIKit;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ChecklistViewController : UITableViewController
+@interface ChecklistViewController : UITableViewController<CreateTaskControllerDelegate>
 
 @property (nonatomic) ChecklistDataSource *dataSource;
+@property (nonatomic) CreateTaskController *taskController;
 
 + (instancetype)viewController;
 
