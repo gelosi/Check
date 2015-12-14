@@ -37,7 +37,7 @@
     
     XCTAssertEqual(list.taskCount, index+1);
     
-    XCTAssertEqualObjects([list taskAtIndex:0], newTask);
+    XCTAssertTrue([newTask isEqualToTask:[list taskAtIndex:0]]);
 }
 
 -(void)testTaskAddLast

@@ -36,7 +36,7 @@
     [datasource addTask:task atIndexPath:indexPath];
 
     XCTAssert(datasource.checkList.activeTasks.taskCount == 4);
-    XCTAssertEqualObjects([datasource taskAtIndexPath:indexPath], task);
+    XCTAssertTrue([task isEqualToTask:[datasource taskAtIndexPath:indexPath]] );
 }
 
 -(void)testDataSourceAddTaskAtInvalidIndexPath
@@ -67,7 +67,7 @@
     [datasource deleteTaskAtIndexPath:firstActiveTaskIndex];
 
     XCTAssert(datasource.checkList.activeTasks.taskCount == 2);
-    XCTAssertNotEqualObjects([datasource taskAtIndexPath:firstActiveTaskIndex], deletedTask);
+    XCTAssertFalse([deletedTask isEqualToTask:[datasource taskAtIndexPath:firstActiveTaskIndex]]);
 }
 
 -(void)testIndexPathByUpdatingTaskCompletionStatusAtIndexPath
@@ -86,7 +86,7 @@
 
     id<Task> taskAfterMove = [datasource taskAtIndexPath:completeTaskIndex];
 
-    XCTAssertEqualObjects(taskToBeMoved.title, taskAfterMove.title);
+    XCTAssertEqualObjects(taskToBeMoved.taskId, taskAfterMove.taskId);
     XCTAssertNotEqual(taskToBeMoved.complete, taskAfterMove.complete);
 }
 

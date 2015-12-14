@@ -18,13 +18,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) BOOL complete;
 
 -(BOOL)isEqualToTask:(id<Task>) task;
+-(instancetype)taskByInvertingCompletion;
 
 @end
 
 @interface TaskItem : NSObject<Task, NSCoding>
 
-- (instancetype)initWithTitle:(NSString *)title complete:(BOOL)complete;
-- (instancetype)init NS_UNAVAILABLE;
+-(instancetype)initWithTitle:(NSString *)title complete:(BOOL)complete;
+-(instancetype)init NS_UNAVAILABLE;
 
 @end
 

@@ -128,7 +128,7 @@ typedef enum : NSUInteger {
 
   TaskSection newSection = task.complete ? TaskSectionActive : TaskSectionComplete;
 
-  TaskItem *newTask = [[TaskItem alloc] initWithTitle:task.title complete:!task.complete];
+  id<Task> newTask = [task taskByInvertingCompletion];
 
   NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:0 inSection:newSection];
 

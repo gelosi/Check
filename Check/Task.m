@@ -23,7 +23,7 @@ static NSString* const TaskCompleteKey = @"complete";
     self = [super init];
 
     if (self) {
-        _taskId = [[NSUUID UUID] UUIDString];
+        _taskId = [taskId copy];
         _title = [title copy];
         _complete = complete;
     }
@@ -31,10 +31,14 @@ static NSString* const TaskCompleteKey = @"complete";
     return self;
 }
 
-
 -(instancetype)initWithTitle:(NSString *)title complete:(BOOL)complete
 {
     return [self initWithTitle:title complete:complete taskId:[[NSUUID UUID] UUIDString]];
+}
+
+- (instancetype)taskByInvertingCompletion
+{
+    return [[TaskItem alloc] initWithTitle:self.title complete:!self.complete taskId:self.taskId];
 }
 
 - (nullable instancetype)initWithCoder:(NSCoder *)aDecoder
