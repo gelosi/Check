@@ -24,6 +24,7 @@
     
     XCTAssertEqualObjects(item.title, title);
     XCTAssertEqual(item.complete, complete);
+    XCTAssertNotNil(item.taskId);
 }
 
 @end

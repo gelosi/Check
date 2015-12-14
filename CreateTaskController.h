@@ -30,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)createTaskControllerWithDelegate:(id<CreateTaskControllerDelegate>)delegate;
 
 - (void)createNewTask;
+- (id<Task>)randomActiveTask;
 
 @end
 

@@ -12,6 +12,7 @@
 		7C789FEE1C1F0E4400C5BE8B /* TestsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C789FED1C1F0E4400C5BE8B /* TestsHelper.m */; };
 		7C789FF01C1F0F7E00C5BE8B /* ChecklistDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C789FEF1C1F0F7E00C5BE8B /* ChecklistDataSourceTests.m */; };
 		7C789FF51C1F259700C5BE8B /* CreateTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C789FF41C1F259700C5BE8B /* CreateTaskController.m */; };
+		7C789FF71C1F2B6400C5BE8B /* CreateTaskControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C789FF61C1F2B6400C5BE8B /* CreateTaskControllerTests.m */; };
 		7CA958501C1A3CD30045D088 /* TaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA9584F1C1A3CD30045D088 /* TaskTests.m */; };
 		7CF88C6C1C148D3E00B81DDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF88C6B1C148D3E00B81DDE /* main.m */; };
 		7CF88C6F1C148D3E00B81DDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF88C6E1C148D3E00B81DDE /* AppDelegate.m */; };
@@ -48,6 +49,7 @@
 		7C789FEF1C1F0F7E00C5BE8B /* ChecklistDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChecklistDataSourceTests.m; sourceTree = "<group>"; };
 		7C789FF31C1F259700C5BE8B /* CreateTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateTaskController.h; path = ../CreateTaskController.h; sourceTree = "<group>"; };
 		7C789FF41C1F259700C5BE8B /* CreateTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateTaskController.m; path = ../CreateTaskController.m; sourceTree = "<group>"; };
+		7C789FF61C1F2B6400C5BE8B /* CreateTaskControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateTaskControllerTests.m; path = ../Check/CreateTaskControllerTests.m; sourceTree = "<group>"; };
 		7CA9584F1C1A3CD30045D088 /* TaskTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskTests.m; sourceTree = "<group>"; };
 		7CF88C671C148D3E00B81DDE /* Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Check.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF88C6B1C148D3E00B81DDE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		7CF88C831C148D3F00B81DDE /* CheckTests */ = {
 			isa = PBXGroup;
 			children = (
+				7C789FF61C1F2B6400C5BE8B /* CreateTaskControllerTests.m */,
 				7C789FEC1C1F0E4400C5BE8B /* TestsHelper.h */,
 				7C789FED1C1F0E4400C5BE8B /* TestsHelper.m */,
 				7CA9584F1C1A3CD30045D088 /* TaskTests.m */,
@@ -280,6 +283,7 @@
 				7C789FF01C1F0F7E00C5BE8B /* ChecklistDataSourceTests.m in Sources */,
 				7C04F3881C1A3E63007E6A3E /* TaskListTests.m in Sources */,
 				7CF88CA21C16353500B81DDE /* ChecklistDataSource.m in Sources */,
+				7C789FF71C1F2B6400C5BE8B /* CreateTaskControllerTests.m in Sources */,
 				7C789FEB1C1F0BCB00C5BE8B /* CheckListTests.m in Sources */,
 				7CF88C9E1C162CE000B81DDE /* CheckList.m in Sources */,
 				7C789FEE1C1F0E4400C5BE8B /* TestsHelper.m in Sources */,

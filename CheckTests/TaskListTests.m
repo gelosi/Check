@@ -52,7 +52,7 @@
     
     XCTAssertEqual(list.taskCount, index+1);
     
-    XCTAssertEqualObjects([list taskAtIndex:index], newTask);
+    XCTAssertTrue([newTask isEqualToTask:[list taskAtIndex:index]]);
 }
 
 -(void)testTaskDelete
@@ -77,8 +77,8 @@
     
     [list moveTaskAtIndex:0 toIndex:2];
     
-    XCTAssertEqualObjects([list taskAtIndex:2], taskOne);
-    XCTAssertEqualObjects([list taskAtIndex:1], taskThree);
+    XCTAssertTrue([taskOne isEqualToTask:[list taskAtIndex:2]]);
+    XCTAssertTrue([taskThree isEqualToTask:[list taskAtIndex:1]]);
     
     XCTAssertTrue(list.taskCount == 3);
 }
